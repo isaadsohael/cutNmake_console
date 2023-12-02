@@ -1,0 +1,15 @@
+from PIL import Image
+
+# imageO = Image.open("D:/test mangas/diamond/vols/vol1/Chapter 1/02.jpg")
+image1 = Image.open("D:/test mangas/diamond/vols/vol1/Chapter 1/16.jpg",)
+(width, height) = (1070, 1600)
+(Width, Height) = image1.size
+# (Width, Height) = imageO.size
+# image1.crop((0,0,width,height)).show()
+image2 = image1.crop((int(-(width - Width) / 2), int(-(height - Height) / 2), (Width + int((width - Width) / 2)),
+             Height + int((height - Height) / 2)))
+image2.show()
+# imageO.crop((int(-(width-Width)/2),int(-(height-Height)/2),(Width+int((width-Width)/2)),height-int((height-Height)/2))).show()
+image2 = image1.transform(size=(width,height),method=Image.EXTENT,data=(int(-(width - Width) / 2), int(-(height - Height) / 2), (Width + int((width - Width) / 2)),
+             Height + int((height - Height) / 2)),fillcolor=(255,255,255))
+image2.show()
